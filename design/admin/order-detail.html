@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ORD-002 — Order &amp; Proyek — Admin Strata Visual</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin">
+<div class="scrim" hidden></div>
+
+<aside class="sidebar" aria-label="Menu admin">
+  <div class="sidebar__brand"><a href="index.html" class="logo">STRATA<span>.</span>VISUAL</a><small>Admin</small></div>
+  <nav class="sidebar__nav" id="sidebar-nav" aria-label="Modul">
+    <ul>
+      <li><a class="sidebar__link" href="index.html">Dashboard</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-konten">Konten</p>
+    <ul aria-labelledby="grp-konten">
+      <li><a class="sidebar__link" href="#">Halaman &amp; Beranda</a></li>
+      <li><a class="sidebar__link" href="#">Layanan</a></li>
+      <li><a class="sidebar__link" href="portfolio-edit.html">Portofolio</a></li>
+      <li><a class="sidebar__link" href="#">Paket &amp; Add-on</a></li>
+      <li><a class="sidebar__link" href="#">Artikel, Berita, Event</a></li>
+      <li><a class="sidebar__link" href="media.html">Media Library</a></li>
+      <li><a class="sidebar__link" href="#">Testimoni &amp; Klien</a></li>
+      <li><a class="sidebar__link" href="#">Tim &amp; Sertifikasi</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-penjualan">Penjualan</p>
+    <ul aria-labelledby="grp-penjualan">
+      <li><a class="sidebar__link" href="leads.html">Inquiry (Leads)</a></li>
+      <li><a class="sidebar__link" href="#">Penawaran (Quotation)</a></li>
+      <li><a class="sidebar__link" href="orders.html" aria-current="page">Order &amp; Proyek</a></li>
+      <li><a class="sidebar__link" href="#">Invoice &amp; Pembayaran</a></li>
+      <li><a class="sidebar__link" href="#">Portal Klien</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-sistem">Sistem</p>
+    <ul aria-labelledby="grp-sistem">
+      <li><a class="sidebar__link" href="settings.html">Pengaturan</a></li>
+      <li><a class="sidebar__link" href="#">Audit Log</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar__foot">Versi desain · data placeholder</div>
+</aside>
+
+<div class="shell">
+  <header class="topbar">
+    <button class="btn btn--ghost btn--sm topbar__burger" type="button" data-drawer-toggle aria-expanded="false" aria-controls="sidebar-nav">Menu</button>
+    <div class="topbar__search">
+      <label class="sr-only" for="q">Cari di admin</label>
+      <input class="input" id="q" type="search" placeholder="Cari lead, order, artikel…">
+    </div>
+    <span class="topbar__spacer"></span>
+    <div class="user">
+      <button class="user__btn" type="button" aria-expanded="false" aria-haspopup="true">
+        <span class="avatar" aria-hidden="true">A</span> Ahmad (Owner)
+      </button>
+      <div class="user__menu" hidden>
+        <p class="user__meta">Ahmad — Owner<br>halo@stratavisual.id</p>
+        <a href="settings.html">Pengaturan akun</a>
+        <a href="#" data-toast-msg="Prototype desain: belum ada backend.">Keluar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="crumbs"><a href="orders.html">Order &amp; Proyek</a> / <span aria-current="page">ORD-002</span></p>
+
+    <div class="page-head">
+      <div>
+        <h1>ORD-002</h1>
+        <p>Klien 1 (PT Tambang 1) · Paket Dokumentasi Harian · Jadwal 06 Oktober 2026 · <span class="badge badge--accent">Shooting</span></p>
+      </div>
+      <div class="page-head__actions">
+        <a class="btn btn--ghost btn--sm" href="#" data-toast-msg="Prototype desain: cetak PDF belum tersedia.">Cetak</a>
+        <button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: simpan belum menyimpan apa pun.">Simpan</button>
+        <button class="btn btn--primary btn--sm" type="button" data-toast-msg="Prototype desain: lanjutkan ke Editing belum mengubah status.">Lanjut ke Editing</button>
+      </div>
+    </div>
+
+    <div class="dash-2col">
+      <div class="main" style="padding:0;gap:var(--s-5)">
+        <section class="card card--pad" aria-labelledby="h-timeline">
+          <div class="card__head"><h2 id="h-timeline">Status order</h2><span class="badge">Diperbarui 2 jam lalu</span></div>
+          <ol class="timeline">
+            <li data-state="done"><span class="dot" aria-hidden="true">✓</span><span><b>Menunggu DP</b>Invoice DP INV-XXX dibayar 28 Sep 2026 · bukti transfer diunggah.</span></li>
+            <li data-state="done"><span class="dot" aria-hidden="true">✓</span><span><b>Dijadwalkan</b>Slot 06 Okt 08.00–17.00 disepakati dengan klien.</span></li>
+            <li data-state="active"><span class="dot" aria-hidden="true">3</span><span><b>Shooting</b>Hari ini. Tim: 1 fotografer, 1 asisten.</span></li>
+            <li><span class="dot" aria-hidden="true">4</span><span><b>Editing</b>Retouch dasar &amp; penamaan file terstruktur.</span></li>
+            <li><span class="dot" aria-hidden="true">5</span><span><b>Review</b>Klien memilih favorit &amp; memberi catatan revisi (2× termasuk paket).</span></li>
+            <li><span class="dot" aria-hidden="true">6</span><span><b>Selesai</b>Pelunasan lunas &amp; galeri privat aktif sampai 06 Nov 2026.</span></li>
+          </ol>
+        </section>
+
+        <section class="card card--pad" aria-labelledby="h-checklist">
+          <div class="card__head"><h2 id="h-checklist">Checklist izin &amp; induksi</h2><span class="badge badge--warn">3 dari 6</span></div>
+          <ul class="checklist">
+            <li><label><input type="checkbox" checked><span>Permintaan masuk site (SIMPER) diproses klien<small>Dokumen: XXX</small></span></label></li>
+            <li><label><input type="checkbox" checked><span>Induksi K3 site selesai<small>Sesi 06 Okt 07.00 — bukti absensi disimpan di hardcopy.</small></span></label></li>
+            <li><label><input type="checkbox" checked><span>APD lengkap (helm, safety shoes, rompi, kacamata safety)<small>Dicek 06 Okt 07.45.</small></span></label></li>
+            <li><label><input type="checkbox"><span>Persetujuan memotret area terbatas<small>Area loader &amp; workshop — butuh izin terpisah dari klien.</small></span></label></li>
+            <li><label><input type="checkbox"><span>Izin terbang drone &amp; batas zona (KKOP)<small>Belum diunggah — wajib bila ada pemotretan udara.</small></span></label></li>
+            <li><label><input type="checkbox"><span>Asuransi &amp; NDA ditandatangani<small>Berkas di folder klien.</small></span></label></li>
+          </ul>
+        </section>
+
+        <section class="card card--pad" id="hasil" aria-labelledby="h-hasil">
+          <div class="card__head"><h2 id="h-hasil">Hasil shooting → galeri klien</h2><span class="badge">X file</span></div>
+          <div class="gallery-strip">
+            <div><div class="ph ph--3x2" data-label="IMG_001"></div><p class="media-item__name">IMG_001</p></div>
+            <div><div class="ph ph--3x2" data-label="IMG_002"></div><p class="media-item__name">IMG_002</p></div>
+            <div><div class="ph ph--3x2" data-label="IMG_003"></div><p class="media-item__name">IMG_003</p></div>
+            <div><div class="ph ph--3x2" data-label="VID_001"></div><p class="media-item__name">VID_001</p></div>
+          </div>
+          <div class="dropzone" role="button" tabindex="0" style="margin-top:var(--s-4)">
+            <b>Unggah hasil ke galeri klien</b>
+            <small>Tarik file ke sini atau klik untuk pilih · JPG/PNG/MP4 · maks 200MB</small>
+          </div>
+          <p class="hint">Galeri privat per order. Klien dapat memilih favorit, mengunduh ZIP, dan memberi komentar revisi. Tautan kedaluwarsa otomatis 30 hari setelah serah terima.</p>
+          <div class="page-head__actions" style="margin-top:var(--s-3)">
+            <button class="btn btn--primary btn--sm" type="button" data-toast-msg="Prototype desain: galeri klien belum dibuat.">Kirim tautan galeri</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: pratinjau klien belum tersedia.">Lihat pratinjau klien</button>
+          </div>
+        </section>
+
+        <section class="card card--pad" aria-labelledby="h-notes">
+          <div class="card__head"><h2 id="h-notes">Catatan internal</h2><span class="badge">X</span></div>
+          <ul class="notes">
+            <li><p class="who"><span class="avatar" aria-hidden="true">A</span> Ahmad · 06 Okt 08:10</p>Induksi selesai. Akses ke pit hanya lewat convoy PT. Tim masuk pukul 09.00.</li>
+            <li><p class="who"><span class="avatar" aria-hidden="true">K</span> Klien 1 · 03 Okt 16:40</p>Tolong sertakan foto titik stockpile dan hauling road untuk laporan bulanan.</li>
+            <li><p class="who"><span class="avatar" aria-hidden="true">S</span> Sales · 02 Okt 10:15</p>DP masuk. Jadwal dikunci, perhatikan cuaca hujan Kamis depan.</li>
+          </ul>
+          <div class="field" style="margin-top:var(--s-4);margin-bottom:0">
+            <label for="note">Tambah catatan</label>
+            <textarea class="textarea" id="note" rows="3" placeholder="Catatan hanya terlihat tim internal…"></textarea>
+          </div>
+        </section>
+      </div>
+
+      <div class="main" style="padding:0;gap:var(--s-5)">
+        <section class="card card--pad" aria-labelledby="h-info">
+          <div class="card__head"><h3 id="h-info">Detail order</h3></div>
+          <ul class="notes">
+            <li><p class="who">Sumber</p>QUO-XXX · dibuat dari inquiry INQ-001</li>
+            <li><p class="who">Paket</p>Dokumentasi Harian · 1 hari, 1 fotografer, 80–120 foto terkurasi</li>
+            <li><p class="who">Site</p>Site A, Kalimantan · Batubara (nama disamarkan, privasi aktif)</li>
+            <li><p class="who">Komoditas</p>Batubara</li>
+            <li><p class="who">Nilai</p>Rp X + mobilisasi Rp X (terpisah)</li>
+          </ul>
+        </section>
+
+        <section class="card card--pad" id="invoice" aria-labelledby="h-invoice">
+          <div class="card__head"><h3 id="h-invoice">Invoice &amp; pembayaran</h3><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: buat invoice belum tersedia.">+ Invoice</button></div>
+          <div class="invoice-row">
+            <div><b>INV-XXX · DP 50%</b><p class="muted">Jatuh tempo 28 Sep 2026 · <span class="badge badge--ok">Lunas</span></p></div>
+            <div style="text-align:right"><p class="invoice-row__amt">Rp X</p><a class="btn btn--ghost btn--sm" href="#" data-toast-msg="Prototype desain: unduh PDF belum tersedia.">PDF</a></div>
+          </div>
+          <div class="invoice-row">
+            <div><b>INV-XXX · Pelunasan</b><p class="muted">Jatuh tempo 20 Okt 2026 · <span class="badge badge--warn">Menunggu</span></p></div>
+            <div style="text-align:right"><p class="invoice-row__amt">Rp X</p><a class="btn btn--ghost btn--sm" href="#" data-toast-msg="Prototype desain: kirim pengingat belum tersedia.">Kirim pengingat</a></div>
+          </div>
+          <p class="hint">Pembayaran fase 1: transfer manual + unggah bukti transfer. Bukti: <a href="#" data-toast-msg="Prototype desain: bukti transfer belum diunggah.">bukti-DP.pdf</a>. Gateway (Midtrans/Xendit) = fase 2.</p>
+        </section>
+
+        <section class="card card--pad" aria-labelledby="h-klien">
+          <div class="card__head"><h3 id="h-klien">Kontak klien</h3></div>
+          <ul class="notes">
+            <li><p class="who">Nama</p>Klien 1 — Jabatan: Manager HCl</li>
+            <li><p class="who">Email</p>klien1@contoh.id</li>
+            <li><p class="who">WhatsApp</p>+62 8XX-XXXX-XXX</li>
+          </ul>
+          <div class="page-head__actions" style="margin-top:var(--s-3)">
+            <a class="btn btn--ghost btn--sm" href="#" data-toast-msg="Prototype desain: tautan WhatsApp belum aktif.">Chat WhatsApp</a>
+            <a class="btn btn--ghost btn--sm" href="leads.html">Buka inquiry</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" role="status" data-toast hidden></div>
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

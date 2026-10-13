@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progres Pit Tahunan — Studi Kasus — Strata Visual</title>
+  <meta name="description" content="Studi kasus dokumentasi aerial progres pit: tantangan, pendekatan, dan hasil pekerjaan untuk klien pertambangan.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo" aria-label="Strata Visual, beranda">STRATA<span>.</span>VISUAL</a>
+    <nav aria-label="Utama">
+      <ul class="nav__links">
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="portofolio.html" aria-current="page">Portofolio</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="pesan.html" class="btn btn--primary btn--sm">Minta Penawaran</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="container case-hero">
+    <nav class="crumbs" aria-label="Remah roti">
+      <a href="index.html">Beranda</a> <span>/</span> <a href="portofolio.html">Portofolio</a> <span>/</span> <span aria-current="page">Progres Pit Tahunan</span>
+    </nav>
+    <div class="case-hero__meta">
+      <span class="badge badge--accent">Aerial</span>
+      <span class="badge">Batubara</span>
+      <span class="badge">Pit</span>
+      <span class="badge">2026</span>
+    </div>
+    <h1>Progres Pit Tahunan</h1>
+    <p>Dokumentasi udara selama 12 bulan untuk memonitor perluasan pit, perubahan stockpile, dan kondisi hauling road.</p>
+  </section>
+
+  <div class="container case-cover">
+    <div class="ph ph--16x9" data-label="Cover 16x9 — aerial pit"></div>
+  </div>
+
+  <section class="section" style="padding-top:0">
+    <div class="container case-layout">
+
+      <!-- CERITA: TANTANGAN → PENDEKATAN → HASIL -->
+      <div class="story">
+        <div class="story__item">
+          <span class="story__no" aria-hidden="true">01</span>
+          <div>
+            <h3>Tantangan</h3>
+            <p>Klien butuh bukti visual progres setiap bulan untuk laporan direksi, tetapi akses ke area dalam pit dibatasi dan sebagian area tidak boleh difoto. Cuaca tidak menentu, dan drone tidak boleh mengganggu aktivitas alat berat.</p>
+          </div>
+        </div>
+
+        <div class="story__item">
+          <span class="story__no" aria-hidden="true">02</span>
+          <div>
+            <h3>Pendekatan</h3>
+            <p>Kami menyusun peta area dan titik ambil tetap yang disepakati bersama tim K3 klien. Pengambilan dilakukan pada pagi hari saat angin minimal, melalui jalur haul road yang sudah disetujui, dan kami mengikuti induksi K3 setiap kali masuk site.</p>
+            <div class="stats">
+              <div class="stat"><b>12</b><span>kunjungan</span></div>
+              <div class="stat"><b>4</b><span>titik tetap</span></div>
+              <div class="stat"><b>0</b><span>insiden K3</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story__item">
+          <span class="story__no" aria-hidden="true">03</span>
+          <div>
+            <h3>Hasil</h3>
+            <p>Klien menerima 240 foto udara terkurasi dan video time-lapse 12 bulan. Laporan perbandingan bulanan menjadi bagian rutin di rapat direksi, dan beberapa materi dipakai untuk mendukung pelaporan ESG.</p>
+          </div>
+        </div>
+
+        <!-- TESTIMONI -->
+        <blockquote class="quote">
+          <p>Sekarang progres pit bisa kami jelaskan dengan foto, bukan cuma angka.</p>
+          <cite>Manajer Operasional · Klien 1 (placeholder)</cite>
+        </blockquote>
+
+        <!-- BEFORE / AFTER -->
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Perbandingan</span>
+            <h2>Januari vs Desember</h2>
+            <p>Geser slider untuk membandingkan kondisi area yang sama di dua periode berbeda.</p>
+          </div>
+          <div class="compare" style="--pos:50%">
+            <div class="ph ph--16x9 compare__layer compare__layer--before"></div>
+            <div class="ph ph--16x9 compare__layer compare__layer--after"></div>
+            <span class="badge compare__label compare__label--before">Januari</span>
+            <span class="badge badge--accent compare__label compare__label--after">Desember</span>
+            <span class="compare__handle" aria-hidden="true"></span>
+            <input class="compare__range" id="compare-range" type="range" min="0" max="100" value="50" aria-label="Geser untuk membandingkan foto sebelum dan sesudah">
+          </div>
+          <p class="compare-cap">Sudut &amp; ketinggian pengambilan dibuat identik agar perbandingan valid.</p>
+        </div>
+
+        <!-- GALERI -->
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Galeri</span>
+            <h2>Cuplikan Pekerjaan</h2>
+          </div>
+          <div class="gallery">
+            <div class="ph ph--3x2 gallery__wide" data-label="Foto 3x2 — pit overview"></div>
+            <div class="ph ph--3x2 gallery__tall" data-label="Foto 3x2 — tepi pit"></div>
+            <div class="ph ph--3x2 gallery__video" data-label="Video 3x2 — time-lapse"><span class="gallery__play" aria-hidden="true"></span></div>
+            <div class="ph ph--3x2" data-label="Foto 3x2 — stockpile"></div>
+            <div class="ph ph--3x2" data-label="Foto 3x2 — hauling road"></div>
+            <div class="ph ph--3x2 gallery__wide" data-label="Foto 3x2 — plan view"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASIDE -->
+      <aside class="case-aside">
+        <div class="card spec">
+          <h4>Spesifikasi Pekerjaan</h4>
+          <table class="table">
+            <tbody>
+              <tr><th scope="row">Jenis</th><td>Aerial foto &amp; video</td></tr>
+              <tr><th scope="row">Komoditas</th><td>Batubara</td></tr>
+              <tr><th scope="row">Area</th><td>Pit &amp; hauling road</td></tr>
+              <tr><th scope="row">Lokasi</th><td>Disamarkan (izin klien)</td></tr>
+              <tr><th scope="row">Klien</th><td>Klien 1 (disamarkan)</td></tr>
+              <tr><th scope="row">Durasi</th><td>12 bulan (12 kunjungan)</td></tr>
+              <tr><th scope="row">Peralatan</th><td>Drone + kamera full-frame</td></tr>
+              <tr><th scope="row">Output</th><td>240 foto, 1 time-lapse</td></tr>
+              <tr><th scope="row">Tahun</th><td>2026</td></tr>
+            </tbody>
+          </table>
+          <p class="compare-cap" style="margin-top:var(--s-4)">Privasi: nama klien dan lokasi tidak ditampilkan atas permintaan.</p>
+        </div>
+        <a href="pesan.html" class="btn btn--primary btn--block">Minta Penawaran Serupa</a>
+        <a href="portofolio.html" class="btn btn--ghost btn--block" style="margin-top:var(--s-3)">Kembali ke Portofolio</a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- PROYEK TERKAIT -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head section-head--row">
+        <div>
+          <span class="eyebrow">Proyek Lain</span>
+          <h2>Proyek Terkait</h2>
+        </div>
+        <a href="portofolio.html" class="btn btn--ghost btn--sm">Semua proyek</a>
+      </div>
+      <div class="related">
+        <a class="pf-card" href="portofolio-detail.html">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — stockpile"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Stockpile &amp; Hauling</h3>
+            <p class="pf-card__meta">Batubara · 2025</p>
+          </div>
+        </a>
+        <a class="pf-card" href="portofolio-detail.html">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — reklamasi"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Reklamasi Pascaambang</h3>
+            <p class="pf-card__meta">Emas · 2025</p>
+          </div>
+        </a>
+        <a class="pf-card" href="portofolio-detail.html">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — pelabuhan"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Jetty &amp; Dermaga</h3>
+            <p class="pf-card__meta">Nikel · 2025</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container cta-band__inner">
+      <h2>Butuh dokumentasi rutin seperti ini?</h2>
+      <div class="cta-band__actions">
+        <a href="pesan.html" class="btn btn--primary">Minta Penawaran</a>
+        <a href="layanan.html" class="btn btn--ghost">Lihat Layanan</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="logo">STRATA<span>.</span>VISUAL</a>
+        <p style="margin-top:12px;max-width:320px">Fotografi, videografi, dan aerial untuk industri pertambangan.</p>
+      </div>
+      <div><h4>Layanan</h4><ul><li><a href="layanan.html">Foto Operasional</a></li><li><a href="layanan.html">Video Perusahaan</a></li><li><a href="layanan.html">Aerial &amp; Drone</a></li></ul></div>
+      <div><h4>Perusahaan</h4><ul><li><a href="tentang.html">Tentang</a></li><li><a href="portofolio.html">Portofolio</a></li><li><a href="artikel.html">Artikel</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Kontak</h4><ul><li>halo@stratavisual.id</li><li>+62 8XX-XXXX-XXXX</li><li>Senin–Sabtu, 08.00–17.00</li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Strata Visual (placeholder)</span><span><a href="syarat.html">Syarat</a> · <a href="privasi.html">Privasi</a></span></div>
+  </div>
+</footer>
+<a class="wa-float" href="#" aria-label="Chat WhatsApp">Chat WhatsApp</a>
+
+<script src="../assets/js/compare.js"></script>
+</body>
+</html>

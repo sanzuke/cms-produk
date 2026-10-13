@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pengaturan — Admin Strata Visual</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin">
+<div class="scrim" hidden></div>
+
+<aside class="sidebar" aria-label="Menu admin">
+  <div class="sidebar__brand"><a href="index.html" class="logo">STRATA<span>.</span>VISUAL</a><small>Admin</small></div>
+  <nav class="sidebar__nav" id="sidebar-nav" aria-label="Modul">
+    <ul>
+      <li><a class="sidebar__link" href="index.html">Dashboard</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-konten">Konten</p>
+    <ul aria-labelledby="grp-konten">
+      <li><a class="sidebar__link" href="#">Halaman &amp; Beranda</a></li>
+      <li><a class="sidebar__link" href="#">Layanan</a></li>
+      <li><a class="sidebar__link" href="portfolio-edit.html">Portofolio</a></li>
+      <li><a class="sidebar__link" href="#">Paket &amp; Add-on</a></li>
+      <li><a class="sidebar__link" href="#">Artikel, Berita, Event</a></li>
+      <li><a class="sidebar__link" href="media.html">Media Library</a></li>
+      <li><a class="sidebar__link" href="#">Testimoni &amp; Klien</a></li>
+      <li><a class="sidebar__link" href="#">Tim &amp; Sertifikasi</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-penjualan">Penjualan</p>
+    <ul aria-labelledby="grp-penjualan">
+      <li><a class="sidebar__link" href="leads.html">Inquiry (Leads)</a></li>
+      <li><a class="sidebar__link" href="#">Penawaran (Quotation)</a></li>
+      <li><a class="sidebar__link" href="orders.html">Order &amp; Proyek</a></li>
+      <li><a class="sidebar__link" href="#">Invoice &amp; Pembayaran</a></li>
+      <li><a class="sidebar__link" href="#">Portal Klien</a></li>
+    </ul>
+    <p class="sidebar__group" id="grp-sistem">Sistem</p>
+    <ul aria-labelledby="grp-sistem">
+      <li><a class="sidebar__link" href="settings.html" aria-current="page">Pengaturan</a></li>
+      <li><a class="sidebar__link" href="#">Audit Log</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar__foot">Versi desain · data placeholder</div>
+</aside>
+
+<div class="shell">
+  <header class="topbar">
+    <button class="btn btn--ghost btn--sm topbar__burger" type="button" data-drawer-toggle aria-expanded="false" aria-controls="sidebar-nav">Menu</button>
+    <div class="topbar__search">
+      <label class="sr-only" for="q">Cari di admin</label>
+      <input class="input" id="q" type="search" placeholder="Cari lead, order, artikel…">
+    </div>
+    <span class="topbar__spacer"></span>
+    <div class="user">
+      <button class="user__btn" type="button" aria-expanded="false" aria-haspopup="true">
+        <span class="avatar" aria-hidden="true">A</span> Ahmad (Owner)
+      </button>
+      <div class="user__menu" hidden>
+        <p class="user__meta">Ahmad — Owner<br>halo@stratavisual.id</p>
+        <a href="settings.html">Pengaturan akun</a>
+        <a href="#" data-toast-msg="Prototype desain: belum ada backend.">Keluar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <h1>Pengaturan</h1>
+        <p>Identitas perusahaan, kontak, SEO default, pembayaran, serta user &amp; peran. Perubahan tercatat di audit log.</p>
+      </div>
+      <div class="page-head__actions">
+        <button class="btn btn--primary btn--sm" type="button" data-toast-msg="Prototype desain: simpan belum menyimpan apa pun.">Simpan perubahan</button>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Bagian pengaturan" data-tabs>
+      <button role="tab" id="tab-identitas" aria-controls="panel-identitas" aria-selected="true" data-tab="identitas">Identitas</button>
+      <button role="tab" id="tab-kontak" aria-controls="panel-kontak" aria-selected="false" data-tab="kontak">Kontak &amp; WhatsApp</button>
+      <button role="tab" id="tab-seo" aria-controls="panel-seo" aria-selected="false" data-tab="seo">SEO</button>
+      <button role="tab" id="tab-bayar" aria-controls="panel-bayar" aria-selected="false" data-tab="bayar">Rekening &amp; Gateway</button>
+      <button role="tab" id="tab-user" aria-controls="panel-user" aria-selected="false" data-tab="user">User &amp; Peran</button>
+    </div>
+
+    <section class="tab-panel" role="tabpanel" id="panel-identitas" aria-labelledby="tab-identitas" tabindex="0">
+      <div class="dash-2col">
+        <section class="card card--pad" aria-labelledby="h-identitas">
+          <div class="card__head"><h2 id="h-identitas">Identitas perusahaan</h2><span class="badge badge--warn">Placeholder</span></div>
+          <div class="form-grid form-grid--2">
+            <div class="field span-2">
+              <label for="nama">Nama brand</label>
+              <input class="input" id="nama" value="Strata Visual">
+            </div>
+            <div class="field">
+              <label for="legal">Badan hukum</label>
+              <input class="input" id="legal" value="PT XXX">
+            </div>
+            <div class="field">
+              <label for="industri">Industri</label>
+              <input class="input" id="industri" value="Pertambangan">
+            </div>
+            <div class="field">
+              <label for="tagline">Tagline singkat</label>
+              <input class="input" id="tagline" value="Dokumentasi visual tambang yang akurat &amp; aman">
+            </div>
+            <div class="field">
+              <label for="berdiri">Tahun berdiri</label>
+              <input class="input" id="berdiri" type="number" value="2024">
+            </div>
+            <div class="field span-2">
+              <label for="deskripsi">Deskripsi singkat (dipakai di footer &amp; schema)</label>
+              <textarea class="textarea" id="deskripsi" rows="3">Fotografi, videografi, dan aerial untuk industri pertambangan — laporan progres, company profile, K3, dan keberlanjutan.</textarea>
+            </div>
+            <div class="field">
+              <label for="logo">Logo</label>
+              <div class="dropzone" role="button" tabindex="0"><b>logo.svg</b><small>240×64 · transparan</small></div>
+            </div>
+            <div class="field">
+              <label for="favicon">Favicon</label>
+              <div class="dropzone" role="button" tabindex="0"><b>favicon.ico</b><small>512×512</small></div>
+            </div>
+          </div>
+        </section>
+        <section class="card card--pad" aria-labelledby="h-sosmed">
+          <div class="card__head"><h3 id="h-sosmed">Sosmed &amp; tautan</h3></div>
+          <div class="field"><label for="ig">Instagram</label><input class="input" id="ig" value="@stratavisual"></div>
+          <div class="field"><label for="li">LinkedIn</label><input class="input" id="li" value="stratavisual"></div>
+          <div class="field"><label for="yt">YouTube</label><input class="input" id="yt" value="https://youtube.com/@stratavisual"></div>
+          <div class="field"><label for="maps">Tautan Google Maps</label><input class="input" id="maps" value="https://maps.google.com/?q=XXX"><span class="hint">Alamat tidak ditampilkan publik bila klien meminta.</span></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="tab-panel" role="tabpanel" id="panel-kontak" aria-labelledby="tab-kontak" tabindex="0" hidden>
+      <div class="dash-2col">
+        <section class="card card--pad" aria-labelledby="h-kontak2">
+          <div class="card__head"><h2 id="h-kontak2">Kontak &amp; jam kerja</h2></div>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="email">Email</label><input class="input" id="email" value="halo@stratavisual.id"></div>
+            <div class="field"><label for="telepon">Telepon</label><input class="input" id="telepon" value="+62 8XX-XXXX-XXXX"></div>
+            <div class="field"><label for="wa">Nomor WhatsApp</label><input class="input" id="wa" value="628XXXXXXXXX"><span class="hint">Format 62xx, tanpa tanda + dan spasi.</span></div>
+            <div class="field"><label for="respon">Target respons</label><input class="input" id="respon" value="≤ 1×24 jam kerja"></div>
+            <div class="field span-2"><label for="jam">Jam kerja</label><input class="input" id="jam" value="Senin–Sabtu, 08.00–17.00 WIB"></div>
+            <div class="field span-2"><label for="area">Area layanan</label><input class="input" id="area" value="Kalimantan, Sulawesi, Maluku, Papua"></div>
+            <div class="field span-2"><label for="alamat">Alamat (opsional)</label><input class="input" id="alamat" value="Jl. XXX, Kota XXX"></div>
+          </div>
+        </section>
+        <section class="card card--pad" aria-labelledby="h-wa2">
+          <div class="card__head"><h3 id="h-wa2">Templat pesan WhatsApp</h3></div>
+          <div class="field"><label for="wa-pesan">Templat</label><textarea class="textarea" id="wa-pesan" rows="6">Halo, saya melihat situs Strata Visual. Kami butuh dokumentasi untuk Site XXX (jenis: foto/video/aerial). Perkiraan tanggal: XX.</textarea><span class="hint">Variabel: {nama} {perusahaan} {site} {jenis} {tanggal}.</span></div>
+          <a class="btn btn--ghost btn--sm" href="#" data-toast-msg="Prototype desain: tidak ada backend untuk mengirim pesan.">Coba kirim</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="tab-panel" role="tabpanel" id="panel-seo" aria-labelledby="tab-seo" tabindex="0" hidden>
+      <div class="dash-2col">
+        <section class="card card--pad" aria-labelledby="h-seo2">
+          <div class="card__head"><h2 id="h-seo2">SEO default</h2></div>
+          <div class="field"><label for="judul">Judul situs</label><input class="input" id="judul" value="Strata Visual — Fotografi &amp; Videografi Pertambangan"></div>
+          <div class="field"><label for="desk-seo">Meta description</label><textarea class="textarea" id="desk-seo" rows="3">Jasa foto, video, dan aerial untuk industri pertambangan. Dokumentasi yang akurat dan aman untuk laporan progres, company profile, dan K3.</textarea></div>
+          <div class="field"><label for="kunci">Kata kunci utama</label><input class="input" id="kunci" value="jasa foto tambang, jasa drone tambang, video company profile tambang, dokumentasi progres tambang"></div>
+          <div class="field"><label for="domain">Domain</label><input class="input" id="domain" value="https://stratavisual.id"></div>
+          <div class="field"><label for="gsc">Google Search Console</label><input class="input" id="gsc" value="XXX"><span class="hint">Kode verifikasi (placeholder).</span></div>
+          <div class="field"><label for="analytics">Analytics</label><select class="select" id="analytics"><option>Plausible (self-hosted)</option><option>Google Analytics 4</option><option>Belum memasang</option></select></div>
+          <div class="form-grid">
+            <label class="switch"><input type="checkbox" checked><span>Buat sitemap.xml otomatis<small>Dilaporkan setiap hari.</small></span></label>
+            <label class="switch"><input type="checkbox" checked><span>Schema.org (LocalBusiness, Service, Article)<small>Per halaman; isi persis agar tidak misleading.</small></span></label>
+          </div>
+        </section>
+        <section class="card card--pad" aria-labelledby="h-preview">
+          <div class="card__head"><h3 id="h-preview">Pratinjau mesin pencari</h3></div>
+          <div class="seo-preview">
+            <small>stratavisual.id</small>
+            <h4>Strata Visual — Fotografi &amp; Videografi Pertambangan</h4>
+            <p>Jasa foto, video, dan aerial untuk industri pertambangan…</p>
+          </div>
+          <p class="hint">Canonical per halaman, bukan semua menuju beranda.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="tab-panel" role="tabpanel" id="panel-bayar" aria-labelledby="tab-bayar" tabindex="0" hidden>
+      <div class="dash-2col">
+        <section class="card card--pad" aria-labelledby="h-rek">
+          <div class="card__head"><h2 id="h-rek">Rekening &amp; pajak</h2><span class="badge badge--ok">Fase 1</span></div>
+          <p class="muted">Fase 1 memakai transfer manual; klien mengunggah bukti transfer.</p>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="bank">Bank</label><input class="input" id="bank" value="Bank XXX"></div>
+            <div class="field"><label for="norek">Nomor rekening</label><input class="input mono" id="norek" value="0000-0000-0000"></div>
+            <div class="field"><label for="atas">Atas nama</label><input class="input" id="atas" value="PT XXX"></div>
+            <div class="field"><label for="pajak">Pajak (PPN)</label><select class="select" id="pajak"><option selected>Tidak ada (0%)</option><option>11%</option><option>12%</option></select></div>
+            <div class="field"><label for="dp">Uang muka (DP)</label><select class="select" id="dp"><option>30%</option><option selected>50%</option><option>Bebas per order</option></select></div>
+            <div class="field"><label for="revisi">Revisi termasuk</label><input class="input" id="revisi" value="2× per order"></div>
+          </div>
+        </section>
+        <section class="card card--pad" aria-labelledby="h-gw">
+          <div class="card__head"><h3 id="h-gw">Payment gateway</h3><span class="badge badge--warn">Fase 2</span></div>
+          <div class="form-grid">
+            <label class="switch"><input type="checkbox"><span>Midtrans<small>QRIS, VA, e-wallet. Kunci &amp; callback belum diisi.</small></span></label>
+            <label class="switch"><input type="checkbox"><span>Xendit<small>Alternatif bila Midtrans belum dipakai.</small></span></label>
+          </div>
+          <div class="field" style="margin-top:var(--s-4)"><label for="webhook">Webhook / callback URL</label><input class="input mono" id="webhook" value="https://stratavisual.id/api/payment/webhook"></div>
+          <p class="hint">Invoice otomatis &amp; pengingat jatuh tempo menyusul setelah gateway aktif.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="tab-panel" role="tabpanel" id="panel-user" aria-labelledby="tab-user" tabindex="0" hidden>
+      <section class="card card--pad" aria-labelledby="h-user">
+        <div class="card__head"><h2 id="h-user">User &amp; peran</h2><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: undangan user belum tersedia.">+ Tambah user</button></div>
+        <div class="table-wrap">
+          <table class="table">
+            <caption class="sr-only">Daftar user admin beserta peran dan akses modul</caption>
+            <thead>
+              <tr><th scope="col">Nama</th><th scope="col">Email</th><th scope="col">Peran</th><th scope="col">Akses</th><th scope="col">Terakhir aktif</th><th scope="col">Aksi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ahmad</td><td>ahmad@stratavisual.id</td><td><span class="badge badge--accent">Owner</span></td><td class="wrap">Semua modul</td><td class="mono">06 Okt 09:12</td><td class="row-actions"><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: user not editable.">Edit</button></td></tr>
+              <tr><td>Editor</td><td>editor@stratavisual.id</td><td><span class="badge badge--info">Editor</span></td><td class="wrap">Konten saja (portofolio, layanan, artikel, media)</td><td class="mono">05 Okt 16:02</td><td class="row-actions"><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: user not editable.">Edit</button></td></tr>
+              <tr><td>Sales</td><td>sales@stratavisual.id</td><td><span class="badge badge--warn">Sales</span></td><td class="wrap">Inquiry, penawaran, order, invoice</td><td class="mono">06 Okt 08:40</td><td class="row-actions"><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: user not editable.">Edit</button></td></tr>
+              <tr><td>Klien 1</td><td>klien1@contoh.id</td><td><span class="badge">Klien</span></td><td class="wrap">Hanya galeri &amp; invoice miliknya</td><td class="mono">03 Okt 10:15</td><td class="row-actions"><button class="btn btn--ghost btn--sm" type="button" data-toast-msg="Prototype desain: user not editable.">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="hint">Peran: Owner (semua) · Editor (konten) · Sales (penjualan) · Klien (portal klien, akun terpisah). Semua perubahan tercatat di audit log.</p>
+      </section>
+    </section>
+  </main>
+</div>
+
+<div class="toast" role="status" data-toast hidden></div>
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

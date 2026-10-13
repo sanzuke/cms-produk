@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontak — Strata Visual</title>
+<meta name="description" content="Hubungi Strata Visual: WhatsApp, email, jam kerja, area layanan, dan form singkat untuk permintaan penawaran dokumentasi tambang.">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/pricing.css">
+<link rel="stylesheet" href="../assets/css/order.css">
+</head>
+<body>
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo" aria-label="Strata Visual, beranda">STRATA<span>.</span>VISUAL</a>
+    <nav aria-label="Utama">
+      <ul class="nav__links">
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html" aria-current="page">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="pesan.html" class="btn btn--primary btn--sm">Minta Penawaran</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="Remah roti"><a href="index.html">Beranda</a> <span aria-hidden="true">/</span> <span aria-current="page">Kontak</span></nav>
+      <span class="eyebrow">Kontak</span>
+      <h1>Respons ≤ 1× 24 Jam Kerja.</h1>
+      <p>Chat WhatsApp untuk pertanyaan cepat, atau isi form singkat agar kami bisa menyiapkan konteks sebelum menghubungi Anda. Untuk pemesanan lengkap, gunakan halaman <a href="pesan.html" class="link-accent">Pesan</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-contact">
+    <div class="container contact-grid">
+
+      <!-- INFORMASI -->
+      <div>
+        <span class="eyebrow">Informasi</span>
+        <h2 id="h-contact">Hubungi Kami</h2>
+        <ul class="info-list">
+          <li><b>WhatsApp</b><span><a href="#" class="link-accent">+62 8XX-XXXX-XXXX</a></span></li>
+          <li><b>Email</b><span>halo@stratavisual.id</span></li>
+          <li><b>Jam kerja</b><span>Senin–Sabtu, 08.00–17.00 WIB</span></li>
+          <li><b>Area layanan</b><span>Kalimantan, Sulawesi, Jawa — di luar area tersebut ada ongkos mobilisasi tambahan</span></li>
+          <li><b>Studio</b><span>Kota XXX, Indonesia <span class="form-note">(alamat placeholder)</span></span></li>
+        </ul>
+
+        <h3>Sebelum Menghubungi</h3>
+        <ul class="hint-list">
+          <li>Sebutkan nama site dan komoditas utamanya.</li>
+          <li>Jelaskan target hasil: laporan bulanan, company profile, atau materi promosi.</li>
+          <li>Ingatkan tanggal shooting bila sudah pasti.</li>
+        </ul>
+
+        <div class="card" style="margin-top: var(--s-5)">
+          <h3>Jam Kerja</h3>
+          <p class="form-note">Di luar jam kerja, pesan WhatsApp tetap masuk dan akan dibalas pada hari kerja berikutnya.</p>
+        </div>
+      </div>
+
+      <!-- FORM SINGKAT -->
+      <div>
+        <div class="card">
+          <span class="eyebrow">Form Singkat</span>
+          <h2>Minta Penawaran</h2>
+          <p>Field bertanda <span class="req" aria-hidden="true">*</span> wajib diisi. Form ini prototipe dan belum mengirim data ke server.</p>
+
+          <form action="#" method="post" novalidate>
+            <div class="grid grid--2">
+              <div class="field">
+                <label for="c-nama">Nama <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="c-nama" name="nama" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="c-perusahaan">Perusahaan <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="c-perusahaan" name="perusahaan" type="text" autocomplete="organization" required>
+              </div>
+            </div>
+
+            <div class="grid grid--2">
+              <div class="field">
+                <label for="c-jabatan">Jabatan</label>
+                <input class="input" id="c-jabatan" name="jabatan" type="text" autocomplete="organization-title">
+              </div>
+              <div class="field">
+                <label for="c-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="c-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-wa">Nomor WhatsApp <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="c-wa" name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="08XX-XXXX-XXXX" required>
+            </div>
+
+            <div class="field">
+              <label for="c-layanan">Jenis layanan <span class="req" aria-hidden="true">*</span></label>
+              <select class="select" id="c-layanan" name="layanan" required>
+                <option value="">Pilih layanan</option>
+                <option>Foto Operasional Tambang</option>
+                <option>Foto Produk &amp; Alat Berat</option>
+                <option>Video Company Profile</option>
+                <option>Video Safety &amp; Induksi</option>
+                <option>Aerial Drone — Foto &amp; Video Site</option>
+                <option>Monitoring Progres Berkala</option>
+                <option>Event, CSR &amp; Reklamasi</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="c-site">Lokasi / nama site <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="c-site" name="site" type="text" placeholder="Kabupaten / provinsi" required>
+            </div>
+
+            <div class="grid grid--2">
+              <div class="field">
+                <label for="c-komoditas">Komoditas</label>
+                <select class="select" id="c-komoditas" name="komoditas">
+                  <option value="">Pilih jenis</option>
+                  <option>Batubara</option>
+                  <option>Nikel</option>
+                  <option>Emas</option>
+                  <option>Bijih besi</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="c-tanggal">Tanggal dibutuhkan</label>
+                <input class="input" id="c-tanggal" name="tanggal" type="date">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="catatan">Kebutuhan khusus</label>
+              <textarea class="textarea" id="catatan" name="catatan" placeholder="Contoh: 2 hari foto + 1 hari video company profile di site batubara, butuh laporan bulanan…"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="privasi" required>
+                <span>Saya setuju datapanya dipakai hanya untuk proses penawaran dan hasil pekerjaan tidak dipublikasikan tanpa izin. <span class="req" aria-hidden="true">*</span></span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Kirim Permintaan</button>
+            <p class="form-note" style="margin-top: var(--s-3)">Butuh pemesanan dengan paket dan harga? Gunakan <a href="pesan.html" class="link-accent">halaman Pesan</a>.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PETA -->
+  <section class="section section--alt" aria-labelledby="h-map">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Lokasi</span>
+        <h2 id="h-map">Studio &amp; Area Kerja</h2>
+        <p>Alamat dan peta dapat dimuat di sini setelah lokasi disepakati. Untuk saat ini seluruh shooting dilakukan langsung di lapangan, bukan di studio.</p>
+      </div>
+      <div class="ph ph--16x9 map-ph" data-label="Peta placeholder 16:9" role="img" aria-label="Placeholder peta lokasi studio Strata Visual"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="logo">STRATA<span>.</span>VISUAL</a>
+        <p style="margin-top:12px;max-width:320px">Fotografi, videografi, dan aerial untuk industri pertambangan.</p>
+      </div>
+      <div><h4>Layanan</h4><ul><li><a href="layanan.html">Foto Operasional</a></li><li><a href="layanan.html">Video Perusahaan</a></li><li><a href="layanan.html">Aerial &amp; Drone</a></li></ul></div>
+      <div><h4>Perusahaan</h4><ul><li><a href="tentang.html">Tentang</a></li><li><a href="portofolio.html">Portofolio</a></li><li><a href="artikel.html">Artikel</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Kontak</h4><ul><li>halo@stratavisual.id</li><li>+62 8XX-XXXX-XXXX</li><li>Senin–Sabtu, 08.00–17.00</li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Strata Visual (placeholder)</span><span><a href="syarat.html">Syarat</a> · <a href="privasi.html">Privasi</a></span></div>
+  </div>
+</footer>
+<a class="wa-float" href="#" aria-label="Chat WhatsApp">Chat WhatsApp</a>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio — Strata Visual</title>
+  <meta name="description" content="Studi kasus dokumentasi tambang: foto operasional, video perusahaan, dan aerial drone. Filter berdasarkan jenis kerja, komoditas, area, dan tahun.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo" aria-label="Strata Visual, beranda">STRATA<span>.</span>VISUAL</a>
+    <nav aria-label="Utama">
+      <ul class="nav__links">
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="portofolio.html" aria-current="page">Portofolio</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="pesan.html" class="btn btn--primary btn--sm">Minta Penawaran</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="Remah roti">
+        <a href="index.html">Beranda</a> <span>/</span> <span aria-current="page">Portofolio</span>
+      </nav>
+      <span class="eyebrow">Studi Kasus</span>
+      <h1>Portofolio</h1>
+      <p>Contoh pekerjaan nyata di lapangan. Beberapa nama klien dan lokasi disamarkan karena belum ada izin publikasi.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="section">
+    <div class="container">
+
+      <div class="filters" role="group" aria-label="Filter portofolio">
+        <div class="filters__row">
+          <span class="filters__label" id="f-jenis">Jenis</span>
+          <div class="chips" role="group" aria-labelledby="f-jenis">
+            <button type="button" class="chip" data-filter="jenis" data-value="" aria-pressed="true">Semua</button>
+            <button type="button" class="chip" data-filter="jenis" data-value="foto" aria-pressed="false">Foto</button>
+            <button type="button" class="chip" data-filter="jenis" data-value="video" aria-pressed="false">Video</button>
+            <button type="button" class="chip" data-filter="jenis" data-value="aerial" aria-pressed="false">Aerial</button>
+          </div>
+        </div>
+
+        <div class="filters__row">
+          <span class="filters__label" id="f-komoditas">Komoditas</span>
+          <div class="chips" role="group" aria-labelledby="f-komoditas">
+            <button type="button" class="chip" data-filter="komoditas" data-value="" aria-pressed="true">Semua</button>
+            <button type="button" class="chip" data-filter="komoditas" data-value="batubara" aria-pressed="false">Batubara</button>
+            <button type="button" class="chip" data-filter="komoditas" data-value="nikel" aria-pressed="false">Nikel</button>
+            <button type="button" class="chip" data-filter="komoditas" data-value="emas" aria-pressed="false">Emas</button>
+            <button type="button" class="chip" data-filter="komoditas" data-value="lainnya" aria-pressed="false">Lainnya</button>
+          </div>
+        </div>
+
+        <div class="filters__row">
+          <span class="filters__label" id="f-area">Area</span>
+          <div class="chips" role="group" aria-labelledby="f-area">
+            <button type="button" class="chip" data-filter="area" data-value="" aria-pressed="true">Semua</button>
+            <button type="button" class="chip" data-filter="area" data-value="pit" aria-pressed="false">Pit</button>
+            <button type="button" class="chip" data-filter="area" data-value="hauling" aria-pressed="false">Hauling</button>
+            <button type="button" class="chip" data-filter="area" data-value="plant" aria-pressed="false">Plant</button>
+            <button type="button" class="chip" data-filter="area" data-value="pelabuhan" aria-pressed="false">Pelabuhan</button>
+            <button type="button" class="chip" data-filter="area" data-value="reklamasi" aria-pressed="false">Reklamasi</button>
+          </div>
+        </div>
+
+        <div class="filters__row">
+          <span class="filters__label" id="f-tahun">Tahun</span>
+          <div class="chips" role="group" aria-labelledby="f-tahun">
+            <button type="button" class="chip" data-filter="tahun" data-value="" aria-pressed="true">Semua</button>
+            <button type="button" class="chip" data-filter="tahun" data-value="2026" aria-pressed="false">2026</button>
+            <button type="button" class="chip" data-filter="tahun" data-value="2025" aria-pressed="false">2025</button>
+            <button type="button" class="chip" data-filter="tahun" data-value="2024" aria-pressed="false">2024</button>
+          </div>
+        </div>
+
+        <div class="filters__bar">
+          <span>Menampilkan <b id="pf-count">12</b> proyek</span>
+          <button type="button" class="filters__reset" data-reset>Reset filter</button>
+        </div>
+      </div>
+
+      <div class="pf-grid">
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="aerial" data-komoditas="batubara" data-area="pit" data-tahun="2026">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — pit"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Progres Pit Tahunan</h3>
+            <p class="pf-card__meta">Batubara · Pit · 2026 · Klien 1</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="video" data-komoditas="batubara" data-area="plant" data-tahun="2026">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Video</span>
+            <div class="ph ph--4x5" data-label="Video 4x5 — plant"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Company Profile Smelter</h3>
+            <p class="pf-card__meta">Batubara · Plant · 2026 · Klien 2</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="foto" data-komoditas="batubara" data-area="hauling" data-tahun="2025">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Foto</span>
+            <div class="ph ph--4x5" data-label="Foto 4x5 — hauling"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Foto Aktivitas Hauling</h3>
+            <p class="pf-card__meta">Batubara · Hauling · 2025 · Klien 3</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="aerial" data-komoditas="nikel" data-area="pelabuhan" data-tahun="2025">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — pelabuhan"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Jetty &amp; Dermaga</h3>
+            <p class="pf-card__meta">Nikel · Pelabuhan · 2025 · Klien 4</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="aerial" data-komoditas="emas" data-area="reklamasi" data-tahun="2025">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — reklamasi"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Reklamasi Pascaambang</h3>
+            <p class="pf-card__meta">Emas · Reklamasi · 2025 · Klien 5</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="video" data-komoditas="nikel" data-area="plant" data-tahun="2025">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Video</span>
+            <div class="ph ph--4x5" data-label="Video 4x5 — plant nikel"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Video Safety Induction</h3>
+            <p class="pf-card__meta">Nikel · Plant · 2025 · Klien 6</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="foto" data-komoditas="nikel" data-area="pit" data-tahun="2024">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Foto</span>
+            <div class="ph ph--4x5" data-label="Foto 4x5 — alat berat"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Alat Berat &amp; Sparepart</h3>
+            <p class="pf-card__meta">Nikel · Pit · 2024 · Klien 7</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="aerial" data-komoditas="batubara" data-area="hauling" data-tahun="2024">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — hauling road"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Jalan Hauling Rusak</h3>
+            <p class="pf-card__meta">Batubara · Hauling · 2024 · Klien 8</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="foto" data-komoditas="emas" data-area="reklamasi" data-tahun="2024">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Foto</span>
+            <div class="ph ph--4x5" data-label="Foto 4x5 — vegetasi"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Pertumbuhan Vegetasi</h3>
+            <p class="pf-card__meta">Emas · Reklamasi · 2024 · Klien 9</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="video" data-komoditas="batubara" data-area="pit" data-tahun="2024">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Video</span>
+            <div class="ph ph--4x5" data-label="Video 4x5 — proses"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Video Proses Tambang</h3>
+            <p class="pf-card__meta">Batubara · Pit · 2024 · Klien 10</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="foto" data-komoditas="lainnya" data-area="pelabuhan" data-tahun="2026">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Foto</span>
+            <div class="ph ph--4x5" data-label="Foto 4x5 — dermaga"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Liputan Event Pelabuhan</h3>
+            <p class="pf-card__meta">Lainnya · Pelabuhan · 2026 · Klien 11</p>
+          </div>
+        </a>
+
+        <a class="pf-card" href="portofolio-detail.html" data-jenis="aerial" data-komoditas="lainnya" data-area="plant" data-tahun="2026">
+          <div class="pf-card__media">
+            <span class="badge badge--accent pf-card__tag">Aerial</span>
+            <div class="ph ph--4x5" data-label="Aerial 4x5 — instalasi"></div>
+          </div>
+          <div class="pf-card__body">
+            <h3>Instalasi Pengolahan</h3>
+            <p class="pf-card__meta">Lainnya · Plant · 2026 · Klien 12</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="pf-empty" id="pf-empty" hidden>
+        <h3>Tidak ada proyek yang cocok</h3>
+        <p>Coba longgarkan filter atau hubungi kami untuk melihat portofolio lengkap yang tidak dipublikasikan.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="container cta-band__inner">
+      <h2>Punya proyek yang mirip salah satu di atas?</h2>
+      <div class="cta-band__actions">
+        <a href="pesan.html" class="btn btn--primary">Minta Penawaran</a>
+        <a href="layanan.html" class="btn btn--ghost">Lihat Layanan</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="logo">STRATA<span>.</span>VISUAL</a>
+        <p style="margin-top:12px;max-width:320px">Fotografi, videografi, dan aerial untuk industri pertambangan.</p>
+      </div>
+      <div><h4>Layanan</h4><ul><li><a href="layanan.html">Foto Operasional</a></li><li><a href="layanan.html">Video Perusahaan</a></li><li><a href="layanan.html">Aerial &amp; Drone</a></li></ul></div>
+      <div><h4>Perusahaan</h4><ul><li><a href="tentang.html">Tentang</a></li><li><a href="portofolio.html">Portofolio</a></li><li><a href="artikel.html">Artikel</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Kontak</h4><ul><li>halo@stratavisual.id</li><li>+62 8XX-XXXX-XXXX</li><li>Senin–Sabtu, 08.00–17.00</li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Strata Visual (placeholder)</span><span><a href="syarat.html">Syarat</a> · <a href="privasi.html">Privasi</a></span></div>
+  </div>
+</footer>
+<a class="wa-float" href="#" aria-label="Chat WhatsApp">Chat WhatsApp</a>
+
+<script src="../assets/js/portfolio.js"></script>
+</body>
+</html>
