@@ -1,0 +1,97 @@
+@extends('layouts.site')
+
+@section('title', 'Tentang')
+@section('description', 'Fotografer dan videografer yang terbiasa bekerja di area tambang: cerita, nilai kerja, peralatan, sertifikasi, dan tim.')
+@section('canonical', route('about'))
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('site/css/content.css') }}">
+@endpush
+
+@section('content')
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="Remah roti"><a href="{{ route('home') }}">Beranda</a> <span aria-hidden="true">/</span> <span aria-current="page">Tentang</span></nav>
+      <span class="eyebrow">Siapa Kami</span>
+      <h1>Dari Lapangan, untuk Lapangan.</h1>
+      <p>Kami fotografer dan videografer yang terbiasa bekerja di area tambang, memahami ritme operasi, aturan K3, dan kebutuhan data di balik setiap gambar.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Cerita Kami</span>
+        <h2>Berawal dari Kamera di Pit.</h2>
+        <p>Strata Visual berawal dari pengalaman bertahun-tahun memotret operasi tambang: alat berat di front kerja, hauling road saat subuh, hingga area reklamasi yang mulai menghijau. <em>[Isi dengan cerita nyata pendiri.]</em></p>
+        <p>Dari situ kami melihat satu kebutuhan yang sama di banyak perusahaan: dokumentasi yang rapi, aman diambil, dan siap dipakai untuk laporan, tender, maupun komunikasi publik.</p>
+        <div class="facts">
+          <div class="fact"><b>X+ tahun</b><span>pengalaman di lapangan</span></div>
+          <div class="fact"><b>XX</b><span>site didokumentasikan</span></div>
+          <div class="fact"><b>XXX jam</b><span>jam terbang drone</span></div>
+          <div class="fact"><b>0</b><span>insiden lapangan</span></div>
+        </div>
+      </div>
+      <div class="ph ph--4x5" data-label="Potret pendiri di lapangan" role="img" aria-label="Placeholder potret pendiri"></div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Misi</span><h2>Dokumentasi yang Akurat dan Aman.</h2><p>Menghadirkan dokumentasi visual industri pertambangan yang dapat diandalkan, dengan keselamatan dan kerahasiaan klien sebagai syarat pertama.</p></div>
+      <div class="values">
+        <div class="value"><span class="value__no">01</span><h3>Safety First</h3><p>Induksi K3 di setiap site, APD lengkap, dan tidak ada gambar yang sepadan dengan risiko.</p></div>
+        <div class="value"><span class="value__no">02</span><h3>Akurasi</h3><p>Titik ambil konsisten, metadata tertata, dan hasil yang bisa dibandingkan dari waktu ke waktu.</p></div>
+        <div class="value"><span class="value__no">03</span><h3>Kerahasiaan</h3><p>Tidak ada publikasi tanpa persetujuan. NDA, watermark, dan galeri privat tersedia.</p></div>
+        <div class="value"><span class="value__no">04</span><h3>Tepat Waktu</h3><p>Jadwal shooting dan penyerahan hasil disepakati di awal dan dijaga.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Peralatan</span><h2>Perlengkapan Kerja.</h2><p>Daftar contoh. Ganti dengan peralatan yang sebenarnya dimiliki.</p></div>
+      <div class="gear">
+        <div class="card"><h3>Kamera &amp; Lensa</h3><ul><li>Kamera mirrorless full-frame (model XXX)</li><li>Lensa lebar, standar, tele</li><li>Filter ND &amp; polarizer</li><li>Tripod &amp; gimbal</li></ul></div>
+        <div class="card"><h3>Aerial</h3><ul><li>Drone (model XXX), 2 unit</li><li>Baterai cadangan cukup untuk 1 hari penuh</li><li>Pilot bersertifikat (isi sertifikat)</li><li>Asuransi pihak ketiga (jika ada)</li></ul></div>
+        <div class="card"><h3>APD &amp; Pasca-produksi</h3><ul><li>Helm, safety shoe, kacamata, rompi</li><li>Stasiun edit &amp; color grading</li><li>Penyimpanan hasil terenkripsi</li><li>Galeri klien privat</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Sertifikasi &amp; Izin</span><h2>Yang Kami Miliki.</h2><p>Semua baris di bawah placeholder sampai dokumennya diverifikasi.</p></div>
+      <div class="table-wrap card">
+        <table class="table">
+          <thead><tr><th>Dokumen</th><th>Penerbit</th><th>Berlaku s/d</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Induksi K3 site (contoh)</td><td>Klien / kontraktor</td><td>XX/XX/XXXX</td><td><span class="badge badge--warn">Placeholder</span></td></tr>
+            <tr><td>Sertifikat pilot drone</td><td>XXX</td><td>XX/XX/XXXX</td><td><span class="badge badge--warn">Placeholder</span></td></tr>
+            <tr><td>Izin operasi drone</td><td>XXX</td><td>XX/XX/XXXX</td><td><span class="badge badge--warn">Placeholder</span></td></tr>
+            <tr><td>Asuransi pihak ketiga</td><td>XXX</td><td>XX/XX/XXXX</td><td><span class="badge badge--warn">Placeholder</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Tim</span><h2>Orang di Balik Lensa.</h2><p>Inti tim kecil, dibantu jaringan editor dan pilot drone saat proyek besar.</p></div>
+      <div class="team">
+        <div class="member"><div class="ph ph--4x5" data-label="Foto" role="img" aria-label="Placeholder foto"></div><h3>Nama Pendiri</h3><p>Fotografer &amp; direktur kreatif</p></div>
+        <div class="member"><div class="ph ph--4x5" data-label="Foto" role="img" aria-label="Placeholder foto"></div><h3>Nama Pilot</h3><p>Pilot drone &amp; aerial</p></div>
+        <div class="member"><div class="ph ph--4x5" data-label="Foto" role="img" aria-label="Placeholder foto"></div><h3>Nama Editor</h3><p>Editor video &amp; color grading</p></div>
+        <div class="member"><div class="ph ph--4x5" data-label="Foto" role="img" aria-label="Placeholder foto"></div><h3>Nama Admin</h3><p>Koordinator proyek &amp; klien</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container cta-band__inner">
+      <h2>Mari Dokumentasikan Site Anda.</h2>
+      <div class="cta-band__actions"><a class="btn btn--primary" href="{{ route('order.create') }}">Minta Penawaran</a><a class="btn btn--ghost" href="{{ route('projects.index') }}">Lihat Portofolio</a></div>
+    </div>
+  </section>
+@endsection

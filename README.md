@@ -20,13 +20,12 @@ composer install
 cp .env.example .env
 php artisan key:generate
 touch database/database.sqlite
-php artisan migrate
-npm install
-npm run dev        # terminal 1
-php artisan serve  # terminal 2 → http://localhost:8000
+php artisan migrate --seed    # --seed mengisi konten placeholder (hanya non-production)
+php artisan make:filament-user
+php artisan serve             # → http://localhost:8000 (admin: /admin)
 ```
 
-Preview prototipe desain: `php -S 127.0.0.1:8090 -t design`.
+Situs publik memakai CSS statis di `public/site/` (tanpa build Node). Preview prototipe desain lama: `php -S 127.0.0.1:8090 -t design`.
 
 ## Deploy ke shared hosting (cPanel)
 

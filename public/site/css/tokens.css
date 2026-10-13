@@ -1,0 +1,44 @@
+/* Design tokens — SINGLE SOURCE OF TRUTH. Do not hardcode colors/sizes elsewhere. */
+:root {
+  /* Color */
+  --c-bg: #0f1214;
+  --c-surface: #1a1f23;
+  --c-surface-2: #232a2f;
+  --c-line: #2d353b;
+  --c-text: #f2f0eb;
+  --c-text-2: #9aa3a8;
+  --c-accent: #f26b21;
+  --c-accent-hover: #ff7f3a;
+  --c-accent-ink: #130a04;
+  --c-ochre: #c8963e;
+  --c-ok: #3fa66b;
+  --c-err: #d64545;
+  --c-warn: #e0a82e;
+  --c-info: #4a90c2;
+
+  /* Type */
+  --f-head: "Barlow Condensed", "Oswald", "Arial Narrow", sans-serif;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-20: 1.25rem;
+  --fs-28: 1.75rem;
+  --fs-40: 2.5rem;
+  --fs-64: clamp(2.75rem, 7vw, 4rem);
+
+  /* Space (4/8 scale) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+  /* Shape & motion */
+  --r-sm: 4px; --r-md: 6px;
+  --container: 1200px;
+  --t-fast: 200ms; --t-med: 350ms;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --shadow: 0 8px 28px rgba(0, 0, 0, .35);
+
+  /* Admin layout */
+  --sidebar-w: 240px;
+}

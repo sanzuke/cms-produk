@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Konten placeholder hanya untuk lokal/staging; production diisi lewat admin.
+        // Akun admin: php artisan make:filament-user
+        if (! app()->isProduction()) {
+            $this->call(ContentSeeder::class);
+        }
     }
 }
