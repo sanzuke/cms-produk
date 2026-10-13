@@ -289,17 +289,17 @@ Setting(key, value)
 
 | Lapisan | Pilihan | Alasan |
 |---|---|---|
-| Framework | Next.js (App Router) + TypeScript | SSR/SEO, satu kode untuk publik & admin |
-| UI | Tailwind CSS + shadcn/ui | Cepat, konsisten |
-| DB | PostgreSQL + Prisma | Relasional (order/invoice) |
-| Auth | Auth.js / Lucia, role-based | Admin & klien |
-| Storage | S3-compatible (Cloudflare R2 / S3) + signed URL | Galeri privat, hemat bandwidth |
-| Media | sharp / Cloudflare Images, `next/image` | Ukuran, WebP/AVIF |
-| Video | YouTube/Vimeo unlisted untuk showreel; file langsung di R2 untuk hasil klien | Hemat beban |
+| Framework | Laravel 13 (PHP ≥ 8.3) + Blade | SSR/SEO, satu kode untuk publik & admin, bisa di shared hosting |
+| UI | Tailwind CSS 4 via Vite (aset di-build lokal) | Hosting umumnya tanpa Node |
+| DB | MySQL/MariaDB (hosting), SQLite (lokal) + Eloquent | Relasional (order/invoice), tersedia di cPanel |
+| Auth | Auth bawaan Laravel (starter kit), role-based | Admin & klien |
+| Storage | Disk lokal `storage/` (private) + temporary signed URL; opsi S3/R2 | Galeri privat |
+| Media | Intervention Image (GD) | Ukuran, WebP |
+| Video | YouTube/Vimeo unlisted untuk showreel; file hasil klien di storage | Hemat beban |
 | Editor | Tiptap / MDX | Artikel |
 | Email | Resend / SMTP | Notifikasi |
-| PDF | react-pdf / puppeteer | Penawaran & invoice |
-| Deploy | VPS (Docker) atau Vercel + managed Postgres | Sesuai anggaran |
+| PDF | barryvdh/laravel-dompdf | Penawaran & invoice, tanpa Chrome di server |
+| Deploy | Shared hosting cPanel (lihat README) atau VPS | Sesuai anggaran |
 | Analytics | Plausible/GA4 + Search Console | SEO |
 
 **SEO:** URL bersih, canonical per halaman (beda dari Origya), sitemap.xml, schema (LocalBusiness, Service, Article), OG image per halaman, kata kunci: *jasa foto tambang, jasa drone tambang, video company profile tambang, dokumentasi progres tambang*.
