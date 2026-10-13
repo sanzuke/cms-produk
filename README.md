@@ -9,6 +9,7 @@ Nama "Strata Visual" masih placeholder.
 ## Stack
 
 - Laravel 13 (PHP ≥ 8.3), Blade
+- Filament 5 sebagai panel admin/CMS di `/admin`
 - Vite + Tailwind CSS 4 untuk aset front-end
 - Database: SQLite (lokal) / MySQL atau MariaDB (hosting)
 
@@ -37,3 +38,5 @@ Preview prototipe desain: `php -S 127.0.0.1:8090 -t design`.
 5. `php artisan migrate --force`, `php artisan storage:link`, `php artisan optimize`.
 6. Pastikan `storage/` dan `bootstrap/cache/` dapat ditulis web server.
 7. Antrian (`QUEUE_CONNECTION=database`): tambahkan cron `* * * * * php ~/strata/artisan queue:work --stop-when-empty` di cPanel, atau set `QUEUE_CONNECTION=sync` bila hosting tidak mengizinkan cron.
+8. Aset Filament (`public/css/filament`, `public/js/filament`) tidak masuk git; dibuat otomatis oleh `composer install` (script `filament:upgrade`). Jika `vendor/` diunggah dari lokal tanpa SSH, unggah juga kedua folder itu.
+9. Buat akun admin pertama: `php artisan make:filament-user`.
