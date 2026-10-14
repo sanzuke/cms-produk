@@ -7,6 +7,7 @@ use App\Http\Controllers\Site\PageController;
 use App\Http\Controllers\Site\PostController;
 use App\Http\Controllers\Site\ProjectController;
 use App\Http\Controllers\Site\ServiceController;
+use App\Http\Controllers\Site\SeoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -31,3 +32,6 @@ Route::get('/kontak', [PageController::class, 'contact'])->name('contact');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 Route::get('/legal/privasi', [PageController::class, 'privacy'])->name('legal.privacy');
 Route::get('/legal/syarat', [PageController::class, 'terms'])->name('legal.terms');
+
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
+Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');

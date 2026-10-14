@@ -3,6 +3,24 @@
 @section('description', config('site.description'))
 @section('canonical', route('home'))
 
+@php
+    $phone = config('site.phone_display');
+    $businessLd = array_filter([
+        '@context' => 'https://schema.org',
+        '@type' => 'ProfessionalService',
+        'name' => config('site.name'),
+        'description' => config('site.description'),
+        'url' => url('/'),
+        'email' => config('site.email'),
+        // Nomor placeholder ("8XX") tidak boleh masuk data terstruktur.
+        'telephone' => ($phone && ! preg_match('/x/i', $phone)) ? $phone : null,
+        'areaServed' => config('site.service_area'),
+    ]);
+@endphp
+@section('head')
+<script type="application/ld+json">{!! json_encode($businessLd, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) !!}</script>
+@endsection
+
 @push('styles')
 <link rel="stylesheet" href="{{ asset('site/css/home.css') }}">
 @endpush
