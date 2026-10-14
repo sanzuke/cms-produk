@@ -7,6 +7,7 @@ use App\Models\Setting;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -29,7 +30,7 @@ class SiteSettings extends Page
     /** Kunci yang boleh disimpan; urutan = urutan di form. */
     public const KEYS = [
         'name', 'tagline', 'description',
-        'email', 'whatsapp', 'phone_display', 'hours', 'service_area',
+        'email', 'notification_emails', 'whatsapp', 'phone_display', 'hours', 'service_area',
         'stats',
     ];
 
@@ -80,6 +81,12 @@ class SiteSettings extends Page
                     ->columns(2)
                     ->schema([
                         TextInput::make('email')->label('Email')->email()->required()->maxLength(190),
+                        TagsInput::make('notification_emails')
+                            ->label('Penerima notifikasi inquiry baru')
+                            ->placeholder('Ketik email lalu Enter')
+                            ->nestedRecursiveRules(['email'])
+                            ->helperText('Kosongkan untuk memakai email kontak di atas.')
+                            ->columnSpanFull(),
                         TextInput::make('whatsapp')
                             ->label('Nomor WhatsApp')
                             ->placeholder('0812xxxxxxx')

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreInquiryRequest;
 use App\Models\Inquiry;
 use App\Models\Package;
 use App\Models\Service;
+use App\Support\InquiryNotifier;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -68,6 +69,8 @@ class OrderController extends Controller
             'attachments' => $paths ?: null,
             'status' => 'new',
         ]);
+
+        InquiryNotifier::notifyStaff($inquiry);
 
         return redirect()->route('order.thanks')->with('inquiry', [
             'ref' => sprintf('RSV-%s-%04d', $inquiry->created_at->format('Y'), $inquiry->id),

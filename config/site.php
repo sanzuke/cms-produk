@@ -11,6 +11,8 @@ return [
     'description' => 'Dokumentasi foto, video, dan aerial untuk laporan progres, company profile, K3, dan keberlanjutan — dikerjakan oleh fotografer yang terbiasa bekerja di area tambang.',
 
     'email' => env('SITE_EMAIL', 'halo@stratavisual.id'),
+    // Penerima notifikasi inquiry baru (pisahkan koma). Kosong = pakai 'email' di atas.
+    'notification_emails' => array_values(array_filter(array_map('trim', explode(',', (string) env('SITE_NOTIFY_EMAILS', ''))))),
     // Format internasional tanpa +, untuk tautan wa.me. Contoh: 628123456789
     'whatsapp' => env('SITE_WHATSAPP', ''),
     'phone_display' => env('SITE_PHONE', '+62 8XX-XXXX-XXXX'),
