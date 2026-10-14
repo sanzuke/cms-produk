@@ -39,3 +39,4 @@ Situs publik memakai CSS statis di `public/site/` (tanpa build Node). Preview pr
 7. Antrian (`QUEUE_CONNECTION=database`): tambahkan cron `* * * * * php ~/strata/artisan queue:work --stop-when-empty` di cPanel, atau set `QUEUE_CONNECTION=sync` bila hosting tidak mengizinkan cron.
 8. Aset Filament (`public/css/filament`, `public/js/filament`) tidak masuk git; dibuat otomatis oleh `composer install` (script `filament:upgrade`). Jika `vendor/` diunggah dari lokal tanpa SSH, unggah juga kedua folder itu.
 9. Buat akun admin pertama: `php artisan make:filament-user`.
+10. Role admin: `owner` (semua akses + kelola pengguna), `editor` (konten situs), `sales` (inquiry). Akun pertama otomatis `owner`; akun berikutnya dibuat dari menu Pengaturan → Pengguna (default `editor` bila dibuat via `make:filament-user`).

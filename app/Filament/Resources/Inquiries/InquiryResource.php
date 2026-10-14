@@ -37,6 +37,11 @@ class InquiryResource extends Resource
         return $count > 0 ? (string) $count : null;
     }
 
+    public static function canAccess(): bool
+    {
+        return auth()->user()?->hasRole(\App\Enums\Role::Owner, \App\Enums\Role::Sales) ?? false;
+    }
+
     public static function form(Schema $schema): Schema
     {
         return InquiryForm::configure($schema);

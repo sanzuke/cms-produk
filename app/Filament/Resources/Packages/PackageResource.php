@@ -30,6 +30,11 @@ class PackageResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function canAccess(): bool
+    {
+        return auth()->user()?->hasRole(\App\Enums\Role::Owner, \App\Enums\Role::Editor) ?? false;
+    }
+
     public static function form(Schema $schema): Schema
     {
         return PackageForm::configure($schema);
