@@ -71,9 +71,10 @@ class OrderController extends Controller
         ]);
 
         InquiryNotifier::notifyStaff($inquiry);
+        InquiryNotifier::confirmToRequester($inquiry);
 
         return redirect()->route('order.thanks')->with('inquiry', [
-            'ref' => sprintf('RSV-%s-%04d', $inquiry->created_at->format('Y'), $inquiry->id),
+            'ref' => $inquiry->reference(),
         ]);
     }
 

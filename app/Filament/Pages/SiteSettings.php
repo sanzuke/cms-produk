@@ -6,6 +6,7 @@ use App\Enums\Role;
 use App\Models\Setting;
 use BackedEnum;
 use Filament\Actions\Action;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
@@ -31,7 +32,7 @@ class SiteSettings extends Page
     public const KEYS = [
         'name', 'tagline', 'description',
         'email', 'notification_emails', 'whatsapp', 'phone_display', 'hours', 'service_area',
-        'stats',
+        'hours_schema', 'og_image', 'stats',
     ];
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
@@ -100,7 +101,24 @@ class SiteSettings extends Page
                             }),
                         TextInput::make('phone_display')->label('Nomor tampil di situs')->placeholder('+62 812-3456-7890')->maxLength(40),
                         TextInput::make('hours')->label('Jam kerja')->maxLength(100),
+                        TextInput::make('hours_schema')
+                            ->label('Jam kerja untuk mesin pencari (opsional)')
+                            ->placeholder('Mo-Sa 08:00-17:00')
+                            ->helperText('Format schema.org: hari Mo Tu We Th Fr Sa Su, jam 24 jam. Kosongkan bila tidak perlu.')
+                            ->rules(['nullable', 'regex:/^(?:(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?(?:,(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?)* \d{2}:\d{2}-\d{2}:\d{2})$/'])
+                            ->validationMessages(['regex' => 'Gunakan format seperti Mo-Sa 08:00-17:00.']),
                         TextInput::make('service_area')->label('Area layanan')->maxLength(200)->columnSpanFull(),
+                    ]),
+
+                Section::make('Berbagi & SEO')
+                    ->schema([
+                        FileUpload::make('og_image')
+                            ->label('Gambar default saat tautan dibagikan (WhatsApp, Facebook, dll.)')
+                            ->helperText('Disarankan 1200×630 px. Dipakai bila halaman tidak punya gambar sendiri.')
+                            ->image()
+                            ->disk('public')
+                            ->directory('settings')
+                            ->maxSize(2048),
                     ]),
 
                 Section::make('Stat bar beranda')

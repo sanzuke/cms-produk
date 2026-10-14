@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\InquiryReceivedMail;
 use App\Mail\NewInquiryMail;
 use App\Models\Inquiry;
 use App\Models\Service;
@@ -48,6 +49,23 @@ class InquiryNotificationTest extends TestCase
         $this->post('/pesan', $this->payload());
 
         Mail::assertSent(NewInquiryMail::class, fn ($mail) => $mail->hasTo('kontak@brand.test'));
+    }
+
+    public function test_requester_gets_confirmation_with_reference_number(): void
+    {
+        Mail::fake();
+        config(['site.notification_emails' => ['sales@brand.test']]);
+
+        $this->post('/pesan', $this->payload());
+
+        $ref = Inquiry::firstOrFail()->reference();
+        Mail::assertSent(InquiryReceivedMail::class, function (InquiryReceivedMail $mail) use ($ref) {
+            return $mail->hasTo('budi@contoh.test')
+                && str_contains($mail->render(), $ref)
+                && str_contains($mail->envelope()->subject, $ref);
+        });
+        // Email internal tidak boleh sampai ke klien.
+        Mail::assertSent(NewInquiryMail::class, fn ($m) => ! $m->hasTo('budi@contoh.test'));
     }
 
     public function test_mail_failure_does_not_break_submission(): void

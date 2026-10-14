@@ -29,6 +29,30 @@ class User extends Authenticatable implements FilamentUser
                 $user->role = Role::Owner;
             }
         });
+
+        // Backstop di level model: sistem tidak boleh kehilangan owner terakhir.
+        static::updating(function (self $user): void {
+            if ($user->isDirty('role') && $user->getOriginal('role') === Role::Owner && self::ownerCount() <= 1) {
+                throw new \DomainException('Owner terakhir tidak boleh diturunkan.');
+            }
+        });
+
+        static::deleting(function (self $user): void {
+            if ($user->getOriginal('role') === Role::Owner && self::ownerCount() <= 1) {
+                throw new \DomainException('Owner terakhir tidak boleh dihapus.');
+            }
+        });
+    }
+
+    private static function ownerCount(): int
+    {
+        return self::query()->where('role', Role::Owner->value)->count();
+    }
+
+    /** Dipakai UI untuk menyembunyikan aksi hapus/ubah-role pada owner terakhir. */
+    public function isLastOwner(): bool
+    {
+        return $this->role === Role::Owner && self::ownerCount() <= 1;
     }
 
     /** Semua akun di tabel users adalah staf internal; hak akses per modul lewat role. */

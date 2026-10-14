@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Mail\InquiryReceivedMail;
 use App\Mail\NewInquiryMail;
 use App\Models\Inquiry;
 use Illuminate\Support\Facades\Mail;
@@ -24,6 +25,18 @@ class InquiryNotifier
         dispatch(function () use ($inquiry, $recipients): void {
             try {
                 Mail::to($recipients)->send(new NewInquiryMail($inquiry));
+            } catch (Throwable $e) {
+                report($e);
+            }
+        })->afterResponse();
+    }
+
+    /** Konfirmasi ke calon klien; pola pengiriman sama dengan notifyStaff (setelah respons, gagal = log). */
+    public static function confirmToRequester(Inquiry $inquiry): void
+    {
+        dispatch(function () use ($inquiry): void {
+            try {
+                Mail::to($inquiry->email, $inquiry->name)->send(new InquiryReceivedMail($inquiry));
             } catch (Throwable $e) {
                 report($e);
             }

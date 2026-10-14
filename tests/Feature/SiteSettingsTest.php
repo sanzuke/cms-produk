@@ -67,4 +67,39 @@ class SiteSettingsTest extends TestCase
         $this->reloadSettings();
         $this->get('/')->assertDontSee('wa.me');
     }
+
+    public function test_structured_hours_validated_and_emitted_in_json_ld(): void
+    {
+        $this->actingAs(User::factory()->role(Role::Owner)->create());
+
+        Livewire::test(SiteSettings::class)
+            ->fillForm($this->validState(['hours_schema' => 'Senin sampai Sabtu']))
+            ->call('save')->assertHasFormErrors(['hours_schema']);
+
+        Livewire::test(SiteSettings::class)
+            ->fillForm($this->validState(['hours_schema' => 'Mo-Sa 08:00-17:00']))
+            ->call('save')->assertHasNoFormErrors();
+
+        $this->reloadSettings();
+        preg_match('#<script type="application/ld\+json">(.*?)</script>#s', $this->get('/')->getContent(), $m);
+        $this->assertSame('Mo-Sa 08:00-17:00', json_decode($m[1], true)['openingHours']);
+    }
+
+    public function test_default_og_image_is_used_unless_page_has_its_own(): void
+    {
+        \Illuminate\Support\Facades\Storage::fake('public');
+        $this->actingAs(User::factory()->role(Role::Owner)->create());
+
+        Livewire::test(SiteSettings::class)
+            ->fillForm($this->validState(['og_image' => \Illuminate\Http\UploadedFile::fake()->image('og.jpg', 1200, 630)]))
+            ->call('save')->assertHasNoFormErrors();
+
+        $path = config('site.og_image') ?? \App\Models\Setting::find('og_image')->value;
+        \Illuminate\Support\Facades\Storage::disk('public')->assertExists($path);
+
+        $this->reloadSettings();
+        $this->get('/tentang')->assertSee('property="og:image"', false)->assertSee(basename($path), false);
+        $this->get('/tentang')->assertSee('summary_large_image', false);
+    }
 }
+

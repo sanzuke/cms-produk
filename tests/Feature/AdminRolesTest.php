@@ -67,4 +67,27 @@ class AdminRolesTest extends TestCase
         $this->assertSame(Role::Owner, $owner->fresh()->role);
         $this->assertSame('Owner Baru', $owner->fresh()->name);
     }
+
+    public function test_last_owner_cannot_be_demoted_or_deleted_but_one_of_two_can(): void
+    {
+        $a = User::factory()->role(Role::Owner)->create();
+
+        try {
+            $a->update(['role' => Role::Editor]);
+            $this->fail('demote seharusnya ditolak');
+        } catch (\DomainException) {
+        }
+        try {
+            $a->delete();
+            $this->fail('hapus seharusnya ditolak');
+        } catch (\DomainException) {
+        }
+        $this->assertTrue($a->fresh()->isLastOwner());
+
+        $b = User::factory()->role(Role::Owner)->create();
+        $this->assertFalse($a->fresh()->isLastOwner());
+        $a->update(['role' => Role::Editor]);
+        $this->assertSame(Role::Editor, $a->fresh()->role);
+        $this->assertTrue($b->fresh()->isLastOwner());
+    }
 }

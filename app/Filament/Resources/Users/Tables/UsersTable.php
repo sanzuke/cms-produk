@@ -33,7 +33,7 @@ class UsersTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make()->hidden(fn (User $record) => $record->is(auth()->user())),
+                DeleteAction::make()->hidden(fn (User $record) => $record->is(auth()->user()) || $record->isLastOwner()),
             ]);
     }
 }

@@ -15,6 +15,9 @@
         // Nomor placeholder ("8XX") tidak boleh masuk data terstruktur.
         'telephone' => ($phone && ! preg_match('/x/i', $phone)) ? $phone : null,
         'areaServed' => config('site.service_area'),
+        // Hanya jam dengan format schema.org valid (diisi lewat Pengaturan), bukan teks bebas.
+        'openingHours' => config('site.hours_schema') ?: null,
+        'image' => config('site.og_image') ? \Illuminate\Support\Facades\Storage::disk('public')->url(config('site.og_image')) : null,
     ]);
 @endphp
 @section('head')

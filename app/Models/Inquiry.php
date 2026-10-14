@@ -39,4 +39,10 @@ class Inquiry extends Model
     {
         return $this->belongsTo(User::class, 'assigned_to');
     }
+
+    /** Nomor referensi yang ditampilkan ke calon klien, mis. RSV-2026-0007. */
+    public function reference(): string
+    {
+        return sprintf('RSV-%s-%04d', $this->created_at->format('Y'), $this->id);
+    }
 }

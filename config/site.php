@@ -18,6 +18,10 @@ return [
     'phone_display' => env('SITE_PHONE', '+62 8XX-XXXX-XXXX'),
     'hours' => env('SITE_HOURS', 'Senin–Sabtu, 08.00–17.00'),
     'service_area' => env('SITE_SERVICE_AREA', 'Kalimantan · Sulawesi · (isi sesuai klien)'),
+    // Format schema.org (mis. "Mo-Sa 08:00-17:00"); kosong = tidak dikirim ke mesin pencari.
+    'hours_schema' => env('SITE_HOURS_SCHEMA', ''),
+    // Path di disk public (diisi lewat admin) untuk og:image default.
+    'og_image' => null,
 
     // Stat bar beranda (placeholder, PLAN §4.1.3).
     'stats' => [

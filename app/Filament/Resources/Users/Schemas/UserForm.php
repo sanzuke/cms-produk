@@ -25,9 +25,8 @@ class UserForm
                             ->options(Role::options())
                             ->required()
                             ->native(false)
-                            // Mencegah owner mencabut hak dirinya sendiri (instalasi bisa tanpa owner).
-                            ->disabled(fn (?\App\Models\User $record) => $record?->is(auth()->user()) ?? false)
-                            ->dehydrated(fn (?\App\Models\User $record) => ! ($record?->is(auth()->user()) ?? false))
+                            ->disabled(fn (?\App\Models\User $record) => $record && ($record->is(auth()->user()) || $record->isLastOwner()))
+                            ->dehydrated(fn (?\App\Models\User $record) => ! ($record && ($record->is(auth()->user()) || $record->isLastOwner())))
                             ->helperText('Owner: semua akses. Editor: konten situs. Sales: inquiry & penjualan.'),
                         TextInput::make('password')
                             ->label('Kata sandi')

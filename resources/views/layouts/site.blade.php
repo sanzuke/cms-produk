@@ -20,7 +20,14 @@
 <meta property="og:description" content="{{ $metaDescription }}">
 <meta property="og:type" content="@yield('og_type', 'website')">
 <meta property="og:url" content="{{ $canonical }}">
-@hasSection('og_image')<meta property="og:image" content="@yield('og_image')">@endif
+@php
+    $ogImage = trim($__env->yieldContent('og_image'))
+        ?: (config('site.og_image') ? \Illuminate\Support\Facades\Storage::disk('public')->url(config('site.og_image')) : null);
+@endphp
+@if ($ogImage)
+<meta property="og:image" content="{{ $ogImage }}">
+<meta name="twitter:card" content="summary_large_image">
+@endif
 @yield('head')
 <link rel="stylesheet" href="{{ asset('site/css/tokens.css') }}">
 <link rel="stylesheet" href="{{ asset('site/css/base.css') }}">
