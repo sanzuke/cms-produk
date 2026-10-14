@@ -23,6 +23,14 @@ return [
     // Path di disk public (diisi lewat admin) untuk og:image default.
     'og_image' => null,
 
+    // Penjualan & pembayaran (transfer manual, PLAN §8). Rekening diisi lewat Pengaturan.
+    'bank_name' => env('SITE_BANK_NAME', ''),
+    'bank_account' => env('SITE_BANK_ACCOUNT', ''),
+    'bank_holder' => env('SITE_BANK_HOLDER', ''),
+    'dp_percent' => (int) env('SITE_DP_PERCENT', 50),
+    'quotation_valid_days' => (int) env('SITE_QUOTATION_VALID_DAYS', 14),
+    'quotation_terms' => "1. Harga belum termasuk mobilisasi/akomodasi kecuali tercantum.\n2. DP dibayar sebelum jadwal dikunci; pelunasan sebelum unduhan hasil resolusi penuh.\n3. Revisi sesuai jumlah yang tercantum; revisi tambahan dikenakan biaya.\n4. Penjadwalan ulang karena cuaca atau izin lokasi tidak menghanguskan DP.\n5. Hak penggunaan hasil dan kerahasiaan mengikuti kesepakatan tertulis (draf — sesuaikan dengan klien).",
+
     // Stat bar beranda (placeholder, PLAN §4.1.3).
     'stats' => [
         ['value' => 'XXX', 'label' => 'jam terbang'],

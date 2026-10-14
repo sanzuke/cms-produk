@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'name', 'company', 'position', 'email', 'phone', 'service_id', 'site', 'commodity',
@@ -38,6 +39,11 @@ class Inquiry extends Model
     public function assignee(): BelongsTo
     {
         return $this->belongsTo(User::class, 'assigned_to');
+    }
+
+    public function quotations(): HasMany
+    {
+        return $this->hasMany(Quotation::class);
     }
 
     /** Nomor referensi yang ditampilkan ke calon klien, mis. RSV-2026-0007. */

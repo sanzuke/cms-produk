@@ -33,6 +33,7 @@ class SiteSettings extends Page
         'name', 'tagline', 'description',
         'email', 'notification_emails', 'whatsapp', 'phone_display', 'hours', 'service_area',
         'hours_schema', 'og_image', 'stats',
+        'bank_name', 'bank_account', 'bank_holder', 'dp_percent', 'quotation_valid_days', 'quotation_terms',
     ];
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
@@ -119,6 +120,21 @@ class SiteSettings extends Page
                             ->disk('public')
                             ->directory('settings')
                             ->maxSize(2048),
+                    ]),
+
+                Section::make('Penjualan & pembayaran')
+                    ->description('Dipakai di penawaran dan invoice (transfer manual).')
+                    ->columns(3)
+                    ->schema([
+                        TextInput::make('bank_name')->label('Bank')->maxLength(60),
+                        TextInput::make('bank_account')->label('Nomor rekening')->maxLength(40),
+                        TextInput::make('bank_holder')->label('Atas nama')->maxLength(100),
+                        TextInput::make('dp_percent')->label('DP (%)')->numeric()->minValue(0)->maxValue(100)->required(),
+                        TextInput::make('quotation_valid_days')->label('Masa berlaku penawaran (hari)')->numeric()->minValue(1)->maxValue(365)->required(),
+                        Textarea::make('quotation_terms')
+                            ->label('Syarat & ketentuan default penawaran')
+                            ->rows(6)
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Stat bar beranda')
