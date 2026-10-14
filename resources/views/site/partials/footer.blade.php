@@ -5,7 +5,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="{{ route('home') }}" class="logo">STRATA<span>.</span>VISUAL</a>
+        <a href="{{ route('home') }}" class="logo">@include('site.partials.logo')</a>
         <p style="margin-top:12px;max-width:320px">Fotografi, videografi, dan aerial untuk industri pertambangan.</p>
       </div>
       <div>

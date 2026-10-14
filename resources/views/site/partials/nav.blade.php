@@ -10,7 +10,7 @@
 @endphp
 <header class="nav">
   <div class="container nav__inner">
-    <a href="{{ route('home') }}" class="logo" aria-label="{{ config('site.name') }}, beranda">STRATA<span>.</span>VISUAL</a>
+    <a href="{{ route('home') }}" class="logo" aria-label="{{ config('site.name') }}, beranda">@include('site.partials.logo')</a>
     <nav aria-label="Utama">
       <ul class="nav__links">
         @foreach ($links as [$label, $url, $pattern])

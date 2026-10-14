@@ -40,3 +40,4 @@ Situs publik memakai CSS statis di `public/site/` (tanpa build Node). Preview pr
 8. Aset Filament (`public/css/filament`, `public/js/filament`) tidak masuk git; dibuat otomatis oleh `composer install` (script `filament:upgrade`). Jika `vendor/` diunggah dari lokal tanpa SSH, unggah juga kedua folder itu.
 9. Buat akun admin pertama: `php artisan make:filament-user`.
 10. Role admin: `owner` (semua akses + kelola pengguna), `editor` (konten situs), `sales` (inquiry). Akun pertama otomatis `owner`; akun berikutnya dibuat dari menu Pengaturan → Pengguna (default `editor` bila dibuat via `make:filament-user`).
+11. Identitas, kontak, WhatsApp, dan stat bar situs diatur owner di admin → Pengaturan → Pengaturan Situs (disimpan di tabel `settings`). Nilai awal ada di `config/site.php` dan `.env` (`SITE_*`) dan dipakai selama pengaturan belum disimpan.
