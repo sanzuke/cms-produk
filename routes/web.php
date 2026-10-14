@@ -4,6 +4,7 @@ use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\OrderController;
 use App\Http\Controllers\Site\PackageController;
 use App\Http\Controllers\Site\PageController;
+use App\Http\Controllers\Site\PortalController;
 use App\Http\Controllers\Site\PostController;
 use App\Http\Controllers\Site\ProjectController;
 use App\Http\Controllers\Site\ServiceController;
@@ -35,3 +36,13 @@ Route::get('/legal/syarat', [PageController::class, 'terms'])->name('legal.terms
 
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
+
+// Portal klien (tanpa akun): akses lewat link ber-token; semua halaman noindex + no-store.
+Route::prefix('klien/{token}')->middleware('throttle:60,1,portal')->group(function () {
+    Route::get('/', [PortalController::class, 'show'])->name('portal.show');
+    Route::post('/invoice/{invoice}/bukti', [PortalController::class, 'proof'])->whereNumber('invoice')->name('portal.proof');
+    Route::post('/favorit', [PortalController::class, 'favorite'])->name('portal.favorite');
+    Route::post('/komentar', [PortalController::class, 'comment'])->middleware('throttle:10,1,portal-comment')->name('portal.comment');
+    Route::get('/berkas/{index}', [PortalController::class, 'file'])->whereNumber('index')->name('portal.file');
+    Route::get('/zip', [PortalController::class, 'zip'])->name('portal.zip');
+});

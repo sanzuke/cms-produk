@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Inquiries\Tables;
 
+use App\Filament\Resources\Quotations\Actions\QuotationActions;
 use App\Models\Inquiry;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -40,6 +41,7 @@ class InquiriesTable
             ])
             ->recordActions([
                 EditAction::make(),
+                QuotationActions::createFromInquiry(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

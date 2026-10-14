@@ -15,6 +15,7 @@ class SeoController extends Controller
         $lines = [
             'User-agent: *',
             'Disallow: /admin',
+            'Disallow: /klien',
             'Disallow: /pesan/terima-kasih',
             '',
             'Sitemap: '.route('sitemap'),

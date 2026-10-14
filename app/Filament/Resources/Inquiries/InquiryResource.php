@@ -52,6 +52,13 @@ class InquiryResource extends Resource
         return InquiriesTable::configure($table);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            RelationManagers\QuotationsRelationManager::class,
+        ];
+    }
+
     public static function getPages(): array
     {
         return [

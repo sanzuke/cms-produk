@@ -1,0 +1,72 @@
+/* Portal klien. Hanya memakai token dari tokens.css. */
+.portal-hero { padding-block: var(--s-8) var(--s-6); border-bottom: 1px solid var(--c-line); background: radial-gradient(90% 120% at 85% 0%, rgba(242,107,33,.08), transparent 60%), var(--c-bg); }
+.portal-hero h1 { font-size: var(--fs-40); max-width: 900px; }
+.portal-hero__meta { margin: 0; font-size: var(--fs-14); max-width: 800px; }
+
+.portal { padding-block: var(--s-6) var(--s-9); display: grid; gap: var(--s-7); }
+.portal-block > h2 { font-size: var(--fs-28); }
+.portal-note { font-size: var(--fs-14); color: var(--c-text-2); }
+.mono { font-family: var(--f-mono); }
+.field-error { color: var(--c-err); font-size: var(--fs-14); }
+
+.portal-flash { padding: var(--s-3) var(--s-4); border-radius: var(--r-sm); border: 1px solid var(--c-line); margin: 0; font-size: var(--fs-14); }
+.portal-flash--ok { border-color: var(--c-ok); color: var(--c-ok); background: rgba(63,166,107,.1); }
+.portal-flash--err { border-color: var(--c-err); color: var(--c-err); background: rgba(214,69,69,.1); }
+.portal-flash--warn { border-color: var(--c-warn); color: var(--c-warn); background: rgba(224,168,46,.1); margin-bottom: var(--s-4); }
+
+/* Linimasa status */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+.timeline__step { display: flex; align-items: center; gap: var(--s-3); color: var(--c-text-2); }
+.timeline__dot { width: 32px; height: 32px; flex: none; display: grid; place-items: center; border: 1px solid var(--c-line); border-radius: 999px; background: var(--c-surface); font: 500 var(--fs-12)/1 var(--f-mono); }
+.timeline__step--done { color: var(--c-text); }
+.timeline__step--done .timeline__dot { border-color: var(--c-ok); color: var(--c-ok); }
+.timeline__step--current { color: var(--c-text); font-weight: 600; }
+.timeline__step--current .timeline__dot { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-accent-ink); }
+@media (min-width: 900px) {
+  .timeline { grid-template-columns: repeat(6, 1fr); gap: var(--s-4); }
+  .timeline__step { flex-direction: column; text-align: center; align-items: center; }
+}
+
+/* Invoice */
+.invoice { display: grid; gap: var(--s-4); margin-bottom: var(--s-4); }
+.invoice:hover { border-color: var(--c-line); }
+.invoice__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-3); }
+.invoice__type { margin-left: var(--s-2); color: var(--c-text-2); font-size: var(--fs-14); }
+.invoice__meta { display: flex; flex-wrap: wrap; gap: var(--s-5); margin: 0; }
+.invoice__meta dt { font: var(--fs-12)/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--c-text-2); margin-bottom: var(--s-1); }
+.invoice__meta dd { margin: 0; }
+.invoice__amount { font: 700 var(--fs-28)/1 var(--f-head); }
+.invoice__bank { border-top: 1px solid var(--c-line); padding-top: var(--s-4); }
+.invoice__bank h3 { font-size: var(--fs-16); margin-bottom: var(--s-2); }
+.invoice__bank p { margin-bottom: var(--s-2); color: var(--c-text); }
+.proof-form { border-top: 1px solid var(--c-line); padding-top: var(--s-4); }
+
+/* Galeri */
+.portal-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-5); }
+.is-disabled { opacity: .5; cursor: not-allowed; }
+.gallery { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.gallery__item { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--r-md); overflow: hidden; display: flex; flex-direction: column; }
+.gallery__thumb { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: var(--c-surface-2); }
+.gallery__doc { aspect-ratio: 3 / 2; display: grid; place-items: center; background: var(--c-surface-2); font: 600 var(--fs-28)/1 var(--f-head); color: var(--c-ochre); letter-spacing: .1em; }
+.gallery__body { padding: var(--s-3) var(--s-4) var(--s-4); display: grid; gap: var(--s-1); }
+.gallery__name { font-weight: 500; font-size: var(--fs-14); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gallery__size { font: var(--fs-12)/1 var(--f-mono); color: var(--c-text-2); }
+.gallery__tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2); margin-top: var(--s-2); }
+.gallery__tools form { margin: 0; }
+.fav { background: none; border: 1px solid var(--c-line); border-radius: var(--r-sm); color: var(--c-text-2); padding: 8px 12px; font: 500 var(--fs-12)/1 var(--f-body); cursor: pointer; }
+.fav:hover { border-color: var(--c-text); color: var(--c-text); }
+.fav[aria-pressed="true"] { border-color: var(--c-accent); color: var(--c-accent); }
+
+/* Komentar */
+.comment { background: var(--c-surface); border: 1px solid var(--c-line); border-left: 3px solid var(--c-line); border-radius: var(--r-sm); padding: var(--s-4); margin-bottom: var(--s-3); }
+.comment--staff { border-left-color: var(--c-accent); }
+.comment--client { border-left-color: var(--c-info); }
+.comment header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2); font-size: var(--fs-14); margin-bottom: var(--s-2); }
+.comment time { font: var(--fs-12)/1.6 var(--f-mono); color: var(--c-text-2); }
+.comment p { margin: 0; color: var(--c-text); overflow-wrap: anywhere; }
+.comment-form { margin-top: var(--s-5); max-width: 720px; }
+
+/* Kedaluwarsa */
+.portal-expired { max-width: 640px; display: grid; gap: var(--s-4); justify-items: start; }
+.portal-contact { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); color: var(--c-text-2); }
+.portal-contact a { color: var(--c-accent); }

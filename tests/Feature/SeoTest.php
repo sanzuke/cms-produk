@@ -40,6 +40,8 @@ class SeoTest extends TestCase
     {
         $this->get('/robots.txt')->assertOk()
             ->assertSee('Disallow: /admin', false)
+            ->assertSee('Disallow: /klien', false)
+            ->assertSee('Disallow: /pesan/terima-kasih', false)
             ->assertSee('Sitemap: '.route('sitemap'), false);
     }
 
